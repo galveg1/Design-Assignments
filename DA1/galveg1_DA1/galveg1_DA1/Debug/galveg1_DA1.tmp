@@ -1,0 +1,40 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\F-YH5B\Desktop\CP301\DA1\galveg1_DA1\galveg1_DA1\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>G:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc</DIR>
+  <DIR>G:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\F-YH5B\Desktop\CP301\DA1\galveg1_DA1\galveg1_DA1\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>G:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\F-YH5B\Desktop\CP301\DA1\galveg1_DA1\galveg1_DA1\Debug\galveg1_DA1.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>galveg1_DA1.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>galveg1_DA1.map</FILE>
+  <FILE>galveg1_DA1.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <start><FILE>C:\Users\F-YH5B\Desktop\CP301\DA1\galveg1_DA1\galveg1_DA1\main.asm</FILE><LINE>21</LINE></start>
+  <storeLP><FILE>C:\Users\F-YH5B\Desktop\CP301\DA1\galveg1_DA1\galveg1_DA1\main.asm</FILE><LINE>75</LINE></storeLP>
+  <keepcounting><FILE>C:\Users\F-YH5B\Desktop\CP301\DA1\galveg1_DA1\galveg1_DA1\main.asm</FILE><LINE>61</LINE></keepcounting>
+  <to300><FILE>C:\Users\F-YH5B\Desktop\CP301\DA1\galveg1_DA1\galveg1_DA1\main.asm</FILE><LINE>66</LINE></to300>
+  <doneStoring><FILE>C:\Users\F-YH5B\Desktop\CP301\DA1\galveg1_DA1\galveg1_DA1\main.asm</FILE><LINE>135</LINE></doneStoring>
+  <back><FILE>C:\Users\F-YH5B\Desktop\CP301\DA1\galveg1_DA1\galveg1_DA1\main.asm</FILE><LINE>78</LINE></back>
+  <zero><FILE>C:\Users\F-YH5B\Desktop\CP301\DA1\galveg1_DA1\galveg1_DA1\main.asm</FILE><LINE>102</LINE></zero>
+  <divB5><FILE>C:\Users\F-YH5B\Desktop\CP301\DA1\galveg1_DA1\galveg1_DA1\main.asm</FILE><LINE>93</LINE></divB5>
+  <isLT5><FILE>C:\Users\F-YH5B\Desktop\CP301\DA1\galveg1_DA1\galveg1_DA1\main.asm</FILE><LINE>98</LINE></isLT5>
+  <isDiv5><FILE>C:\Users\F-YH5B\Desktop\CP301\DA1\galveg1_DA1\galveg1_DA1\main.asm</FILE><LINE>109</LINE></isDiv5>
+  <notB5><FILE>C:\Users\F-YH5B\Desktop\CP301\DA1\galveg1_DA1\galveg1_DA1\main.asm</FILE><LINE>123</LINE></notB5>
+  <by5><FILE>C:\Users\F-YH5B\Desktop\CP301\DA1\galveg1_DA1\galveg1_DA1\main.asm</FILE><LINE>115</LINE></by5>
+  <addC5><FILE>C:\Users\F-YH5B\Desktop\CP301\DA1\galveg1_DA1\galveg1_DA1\main.asm</FILE><LINE>119</LINE></addC5>
+  <addCN><FILE>C:\Users\F-YH5B\Desktop\CP301\DA1\galveg1_DA1\galveg1_DA1\main.asm</FILE><LINE>126</LINE></addCN>
+ </LABELS>
+</ASSEMBLER_INFO>
