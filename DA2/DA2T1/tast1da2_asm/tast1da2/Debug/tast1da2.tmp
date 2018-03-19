@@ -1,0 +1,31 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\F-YH5B\Desktop\CP301\DA2\DA2T1\tast1da2_asm\tast1da2\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>G:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc</DIR>
+  <DIR>G:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\F-YH5B\Desktop\CP301\DA2\DA2T1\tast1da2_asm\tast1da2\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>G:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\F-YH5B\Desktop\CP301\DA2\DA2T1\tast1da2_asm\tast1da2\Debug\tast1da2.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>tast1da2.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>tast1da2.map</FILE>
+  <FILE>tast1da2.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <start><FILE>C:\Users\F-YH5B\Desktop\CP301\DA2\DA2T1\tast1da2_asm\tast1da2\main.asm</FILE><LINE>6</LINE></start>
+  <begin><FILE>C:\Users\F-YH5B\Desktop\CP301\DA2\DA2T1\tast1da2_asm\tast1da2\main.asm</FILE><LINE>19</LINE></begin>
+  <delay><FILE>C:\Users\F-YH5B\Desktop\CP301\DA2\DA2T1\tast1da2_asm\tast1da2\main.asm</FILE><LINE>24</LINE></delay>
+  <body><FILE>C:\Users\F-YH5B\Desktop\CP301\DA2\DA2T1\tast1da2_asm\tast1da2\main.asm</FILE><LINE>30</LINE></body>
+  <done><FILE>C:\Users\F-YH5B\Desktop\CP301\DA2\DA2T1\tast1da2_asm\tast1da2\main.asm</FILE><LINE>34</LINE></done>
+ </LABELS>
+</ASSEMBLER_INFO>
