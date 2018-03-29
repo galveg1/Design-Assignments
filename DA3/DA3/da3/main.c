@@ -39,7 +39,7 @@ ISR(TIMER1_OVF_vect)
 	readTemp();	
 }//end ISR(TIMER0_OVF
 
-//Attempted Didn't work
+//Attempt at using stream file Didn't work
 // static int outChr(char t, FILE *stream);	//Output function
 // static FILE usartout = FDEV_SETUP_STREAM(outChr, NULL, _FDEV_SETUP_WRITE);	//Stream pointer
 
