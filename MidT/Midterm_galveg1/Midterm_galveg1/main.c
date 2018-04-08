@@ -18,7 +18,7 @@
 
 volatile uint8_t adcValue;
 /*~3.5min timer1 Counter 65536*25 * T = ~3.5 minutes*/
-volatile uint8_t fifteenPlus = 2;	//
+volatile uint8_t fifteenPlus = 25;	//
 
 
 /*Function Declarations*/
@@ -47,6 +47,7 @@ ISR(TIMER1_OVF_vect)
 	char seeTemp[8];
 	float	lm34_0;		//For ASCII Temp output
 	
+	ADCSRA |= (1 << ADSC);						//Start Conversion
 	while((ADCSRA & (1 << ADIF)) == 0);			//Wait for conversion to finish
 	
 	/*Conversion to °F*/
@@ -55,7 +56,7 @@ ISR(TIMER1_OVF_vect)
 	dtostrf(lm34_0, 5, 2, seeTemp);				//Float to char conversion
 	
 	
-	if(fifteenPlus>=2)		//Timer
+	if(fifteenPlus>=25)		//Timer
 	{
 		
 		/*Build Strings for AT+ commands*/
