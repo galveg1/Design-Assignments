@@ -18,7 +18,7 @@
 
 volatile uint8_t adcValue;
 /*~3.5min timer1 Counter 65536*25 * T = ~3.5 minutes*/
-volatile uint8_t fifteenPlus = 2;	//
+volatile uint8_t fifteenPlus = 25;	//
 
 
 /*Function Declarations*/
@@ -63,14 +63,11 @@ ISR(TIMER1_OVF_vect)
 		unsigned char temp0			= "t";
 		unsigned char temp1			= "\r\n";
 		unsigned char CIPClose[]	= "AT+CIPCLOSE\r\n";
-		unsigned char CWJAPLogIn[]	= "AT+AWJAP=\"-7-\",\"985677221174\"";	
-	
-	if(fifteenPlus>=2)		//Timer
+			
+	if(fifteenPlus>=25)		//Timer
 	{
 	
-		_delay_ms(2000);
-		outputStr(CWJAPLogIn);
-		outputStr("\r\n");
+		
 		
 		_delay_ms(2000);
 		outputStr(CIPStart);	//Send Start String
@@ -103,7 +100,13 @@ int main(void)
 		
 	ADC_Init();			//initialize ADC
 	USART_Init();		//UART initialization
-		
+	
+	/*WiFi Loggin Credentials*/
+	unsigned char CWJAPLogIn[]	= "AT+CWJAP=\"-7-\",\"985677221174\"";
+	
+	_delay_ms(2000);
+	outputStr(CWJAPLogIn);
+	outputStr("\r\n");	
 						
     while (1) 
     {
