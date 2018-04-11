@@ -18,7 +18,7 @@
 
 volatile uint8_t adcValue;
 /*~3.5min timer1 Counter 65536*25 * T = ~3.5 minutes*/
-volatile uint8_t fifteenPlus = 25;	//
+volatile uint8_t fifteenPlus = 2;	//
 
 
 /*Function Declarations*/
@@ -54,11 +54,8 @@ ISR(TIMER1_OVF_vect)
 	lm34_0 = (adcValue * 5.0 / 0x100) * 100.0;	//(ADC * 5 = 200 /256) * 100
 	
 	dtostrf(lm34_0, 5, 2, seeTemp);				//Float to char conversion
-	
-	
-	if(fifteenPlus>=25)		//Timer
-	{
-		
+
+
 		/*Build Strings for AT+ commands*/
 		unsigned char CIPStart[]	= "AT+CIPSTART=\"TCP\",\"api.thingspeak.com\",80\r\n";
 		unsigned char CIPSend[]		= "AT+CIPSEND=51\r\n";
@@ -66,7 +63,14 @@ ISR(TIMER1_OVF_vect)
 		unsigned char temp0			= "t";
 		unsigned char temp1			= "\r\n";
 		unsigned char CIPClose[]	= "AT+CIPCLOSE\r\n";
-		
+		unsigned char CWJAPLogIn[]	= "AT+AWJAP=\"-7-\",\"985677221174\"";	
+	
+	if(fifteenPlus>=2)		//Timer
+	{
+	
+		_delay_ms(2000);
+		outputStr(CWJAPLogIn);
+		outputStr("\r\n");
 		
 		_delay_ms(2000);
 		outputStr(CIPStart);	//Send Start String
