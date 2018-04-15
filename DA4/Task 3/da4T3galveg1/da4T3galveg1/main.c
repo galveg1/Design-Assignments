@@ -11,7 +11,7 @@
 #include <avr/interrupt.h>
 
 
-// Variable Declarations
+//Variable Declarations
 volatile unsigned int PWMOUT; // output for PWM duty cycle
 
 void timekeeper();
@@ -19,7 +19,7 @@ void adc_init();
 
 int main(void)
 {
-	// port initialization
+	//Port initialization
 	DDRB = 0x02;		//Set PB1 OC1A as output to generate PWM
 	
 	timekeeper();
@@ -27,9 +27,9 @@ int main(void)
 		
 	while (1)
 	{
-		ADCSRA |= (1 << ADSC);				// start conversion
-		while((ADCSRA & (1 << ADIF)) == 0);		// wait for conversion to finish
-		PWMOUT = (ADC & 0x03FF) * 24 / 10+800;	// OCR1A value for duty cycle
+		ADCSRA |= (1 << ADSC);				//Start conversion
+		while((ADCSRA & (1 << ADIF)) == 0);		//Wait for conversion to finish
+		PWMOUT = (ADC & 0x03FF) * 24 / 10+800;	//OCR1A value for duty cycle
 		OCR1A = PWMOUT;
 		
 		

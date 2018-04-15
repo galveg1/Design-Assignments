@@ -2,7 +2,7 @@
  * da4_galveg1.c
  *
  * Created: 4/11/2018 05:01:07 PM
- * Author : Nova Supreme
+ * Author : Guillermo Gálvez
  */ 
 #define F_CPU 8000000UL
 #include <avr/io.h>
