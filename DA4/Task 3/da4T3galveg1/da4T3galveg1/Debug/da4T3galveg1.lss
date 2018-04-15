@@ -1,0 +1,259 @@
+
+da4T3galveg1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  000001ea  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000176  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000002  00800100  00800100  000001ea  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000001ea  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  0000021c  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000030  00000000  00000000  0000025c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000006df  00000000  00000000  0000028c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000633  00000000  00000000  0000096b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   0000027c  00000000  00000000  00000f9e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000044  00000000  00000000  0000121c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000039a  00000000  00000000  00001260  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000020  00000000  00000000  000015fa  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+   8:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+   c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  10:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  14:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  18:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  1c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  20:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  24:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  28:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  2c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  30:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  34:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  38:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  3c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  40:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  44:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  48:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  4c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  50:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  54:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  58:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  5c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  60:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  64:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_clear_bss>:
+  74:	21 e0       	ldi	r18, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	01 c0       	rjmp	.+2      	; 0x7e <.do_clear_bss_start>
+
+0000007c <.do_clear_bss_loop>:
+  7c:	1d 92       	st	X+, r1
+
+0000007e <.do_clear_bss_start>:
+  7e:	a2 30       	cpi	r26, 0x02	; 2
+  80:	b2 07       	cpc	r27, r18
+  82:	e1 f7       	brne	.-8      	; 0x7c <.do_clear_bss_loop>
+  84:	0e 94 72 00 	call	0xe4	; 0xe4 <main>
+  88:	0c 94 b9 00 	jmp	0x172	; 0x172 <_exit>
+
+0000008c <__bad_interrupt>:
+  8c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000090 <timekeeper>:
+}//end MAIN
+
+void timekeeper()
+{
+	//TIMER1 initialization - generate 50Hz PWM
+	TCCR1A |= (1 << COM1A1) | (1 << WGM11);			// Fast PWM, Non-inverted mode
+  90:	e0 e8       	ldi	r30, 0x80	; 128
+  92:	f0 e0       	ldi	r31, 0x00	; 0
+  94:	80 81       	ld	r24, Z
+  96:	82 68       	ori	r24, 0x82	; 130
+  98:	80 83       	st	Z, r24
+	TCCR1B |= (1 << WGM13) | (1<< WGM12) | (1 << CS11);	// 8 prescaling
+  9a:	e1 e8       	ldi	r30, 0x81	; 129
+  9c:	f0 e0       	ldi	r31, 0x00	; 0
+  9e:	80 81       	ld	r24, Z
+  a0:	8a 61       	ori	r24, 0x1A	; 26
+  a2:	80 83       	st	Z, r24
+	//TIMSK1	|= (1 << TOIE1);
+	ICR1 = 9999;										// top value for timer1
+  a4:	8f e0       	ldi	r24, 0x0F	; 15
+  a6:	97 e2       	ldi	r25, 0x27	; 39
+  a8:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
+  ac:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
+  b0:	08 95       	ret
+
+000000b2 <adc_init>:
+}
+
+void adc_init()
+{
+	DDRC	= 0;			//Set PORTC as input for adc
+  b2:	17 b8       	out	0x07, r1	; 7
+	DIDR0	= 0x01;			//Disable Digi input on ADC0
+  b4:	81 e0       	ldi	r24, 0x01	; 1
+  b6:	80 93 7e 00 	sts	0x007E, r24	; 0x80007e <__TEXT_REGION_LENGTH__+0x7e007e>
+	
+	ADMUX = 0;				//
+  ba:	ec e7       	ldi	r30, 0x7C	; 124
+  bc:	f0 e0       	ldi	r31, 0x00	; 0
+  be:	10 82       	st	Z, r1
+	ADMUX |= (1 << REFS0);	//Use Vcc Ref voltage
+  c0:	80 81       	ld	r24, Z
+  c2:	80 64       	ori	r24, 0x40	; 64
+  c4:	80 83       	st	Z, r24
+	//ADMUX |= (1 << ADLAR);	//Left adjust ADC Reg, 8-bit Resolution
+	
+	//Enable ADC, Start Conv, Set Auto Trig Enable
+	ADCSRA |= (1 << ADEN);	//Enable ADC
+  c6:	ea e7       	ldi	r30, 0x7A	; 122
+  c8:	f0 e0       	ldi	r31, 0x00	; 0
+  ca:	80 81       	ld	r24, Z
+  cc:	80 68       	ori	r24, 0x80	; 128
+  ce:	80 83       	st	Z, r24
+	//ADCSRA |= (1 << ADATE); //Set ADC Auto Trig
+	//ADCSRA |= (1 << ADIE);	//Enable Interrupts
+	ADCSRA |= (1 << ADPS2) | (1 << ADPS1) | (1 << ADPS0); //8MHz, Pre-Scale 128 = 62500KHz
+  d0:	80 81       	ld	r24, Z
+  d2:	87 60       	ori	r24, 0x07	; 7
+  d4:	80 83       	st	Z, r24
+	ADCSRA |= (1 << ADSC);	//Start Conversion
+  d6:	80 81       	ld	r24, Z
+  d8:	80 64       	ori	r24, 0x40	; 64
+  da:	80 83       	st	Z, r24
+	
+	ADCSRB = 0;			//Free running mode
+  dc:	10 92 7b 00 	sts	0x007B, r1	; 0x80007b <__TEXT_REGION_LENGTH__+0x7e007b>
+	sei();				//Enable interrupts
+  e0:	78 94       	sei
+  e2:	08 95       	ret
+
+000000e4 <main>:
+void adc_init();
+
+int main(void)
+{
+	// port initialization
+	DDRB = 0x02;		//Set PB1 OC1A as output to generate PWM
+  e4:	82 e0       	ldi	r24, 0x02	; 2
+  e6:	84 b9       	out	0x04, r24	; 4
+	
+	timekeeper();
+  e8:	0e 94 48 00 	call	0x90	; 0x90 <timekeeper>
+	adc_init();
+  ec:	0e 94 59 00 	call	0xb2	; 0xb2 <adc_init>
+		
+	while (1)
+	{
+		ADCSRA |= (1 << ADSC);				// start conversion
+  f0:	ea e7       	ldi	r30, 0x7A	; 122
+  f2:	f0 e0       	ldi	r31, 0x00	; 0
+		while((ADCSRA & (1 << ADIF)) == 0);		// wait for conversion to finish
+		PWMOUT = (ADC & 0x03FF) * 24 / 10+800;	// OCR1A value for duty cycle
+  f4:	48 e7       	ldi	r20, 0x78	; 120
+  f6:	50 e0       	ldi	r21, 0x00	; 0
+		OCR1A = PWMOUT;
+  f8:	c8 e8       	ldi	r28, 0x88	; 136
+  fa:	d0 e0       	ldi	r29, 0x00	; 0
+	timekeeper();
+	adc_init();
+		
+	while (1)
+	{
+		ADCSRA |= (1 << ADSC);				// start conversion
+  fc:	80 81       	ld	r24, Z
+  fe:	80 64       	ori	r24, 0x40	; 64
+ 100:	80 83       	st	Z, r24
+		while((ADCSRA & (1 << ADIF)) == 0);		// wait for conversion to finish
+ 102:	80 81       	ld	r24, Z
+ 104:	84 ff       	sbrs	r24, 4
+ 106:	fd cf       	rjmp	.-6      	; 0x102 <main+0x1e>
+		PWMOUT = (ADC & 0x03FF) * 24 / 10+800;	// OCR1A value for duty cycle
+ 108:	da 01       	movw	r26, r20
+ 10a:	8d 91       	ld	r24, X+
+ 10c:	9c 91       	ld	r25, X
+ 10e:	93 70       	andi	r25, 0x03	; 3
+ 110:	9c 01       	movw	r18, r24
+ 112:	22 0f       	add	r18, r18
+ 114:	33 1f       	adc	r19, r19
+ 116:	28 0f       	add	r18, r24
+ 118:	39 1f       	adc	r19, r25
+ 11a:	22 0f       	add	r18, r18
+ 11c:	33 1f       	adc	r19, r19
+ 11e:	22 0f       	add	r18, r18
+ 120:	33 1f       	adc	r19, r19
+ 122:	22 0f       	add	r18, r18
+ 124:	33 1f       	adc	r19, r19
+ 126:	ad ec       	ldi	r26, 0xCD	; 205
+ 128:	bc ec       	ldi	r27, 0xCC	; 204
+ 12a:	0e 94 aa 00 	call	0x154	; 0x154 <__umulhisi3>
+ 12e:	96 95       	lsr	r25
+ 130:	87 95       	ror	r24
+ 132:	96 95       	lsr	r25
+ 134:	87 95       	ror	r24
+ 136:	96 95       	lsr	r25
+ 138:	87 95       	ror	r24
+ 13a:	80 5e       	subi	r24, 0xE0	; 224
+ 13c:	9c 4f       	sbci	r25, 0xFC	; 252
+ 13e:	90 93 01 01 	sts	0x0101, r25	; 0x800101 <_edata+0x1>
+ 142:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <_edata>
+		OCR1A = PWMOUT;
+ 146:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <_edata>
+ 14a:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <_edata+0x1>
+ 14e:	99 83       	std	Y+1, r25	; 0x01
+ 150:	88 83       	st	Y, r24
+		
+		
+	}//end while(1)
+ 152:	d4 cf       	rjmp	.-88     	; 0xfc <main+0x18>
+
+00000154 <__umulhisi3>:
+ 154:	a2 9f       	mul	r26, r18
+ 156:	b0 01       	movw	r22, r0
+ 158:	b3 9f       	mul	r27, r19
+ 15a:	c0 01       	movw	r24, r0
+ 15c:	a3 9f       	mul	r26, r19
+ 15e:	70 0d       	add	r23, r0
+ 160:	81 1d       	adc	r24, r1
+ 162:	11 24       	eor	r1, r1
+ 164:	91 1d       	adc	r25, r1
+ 166:	b2 9f       	mul	r27, r18
+ 168:	70 0d       	add	r23, r0
+ 16a:	81 1d       	adc	r24, r1
+ 16c:	11 24       	eor	r1, r1
+ 16e:	91 1d       	adc	r25, r1
+ 170:	08 95       	ret
+
+00000172 <_exit>:
+ 172:	f8 94       	cli
+
+00000174 <__stop_program>:
+ 174:	ff cf       	rjmp	.-2      	; 0x174 <__stop_program>
